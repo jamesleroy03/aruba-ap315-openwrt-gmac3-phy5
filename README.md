@@ -40,6 +40,10 @@ The breakthrough was enabling physical **GMAC3 (`37600000.ethernet`) with PHY5**
 
 **Not included:** proprietary Aruba firmware/bootloader binaries, private network credentials, personal SSH keys, or unverified bootloader flashing commands. The exact working DTS diff has now been extracted and published; the original bootloader-flash transcript still needs independent verification. Do not infer destructive SPI commands from prose.
 
+## Community discussion
+
+[OpenWrt Forum: OpenWrt install on Aruba AP-315](https://forum.openwrt.org/t/openwrt-install-on-aruba-ap-315/254311)
+
 ## Related upstream history
 
 David Bauer / blocktrron's [2020 Aruba AP-315 support commit](https://git.openwrt.org/openwrt/staging/blocktrron/commit/?h=aruba-ap315&id=b3e1cf9bff8f927e80b8d51362e80e99d09cbd7b) was invaluable for PHY address, MDIO and hardware archaeology. The GMAC3 result reported here is a later field finding, **not** a claim that the original commit was universally incorrect.
