@@ -105,6 +105,3 @@ index be50a44..f927889 100644
 +	nvmem-cells = <&macaddr_lan 0>;
  	nvmem-cell-names = "mac-address";
  };
- 
-
-[executed on device: server1 (b9b9f4cb-a4ae-475c-90b6-cd67f8dc636f)]
