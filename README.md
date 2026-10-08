@@ -2,6 +2,10 @@
 
 **Experimental community documentation — two physical AP-315 units successfully deployed (October 2026).** Not an official OpenWrt-supported installation guide. Flashing a bootloader can permanently brick a device.
 
+## Aruba AP-315 OpenWrt Ethernet RX=0 fix — GMAC3 / SGMII / PHY5
+
+For searches involving **Aruba AP-315**, **APIN0315**, **Qualcomm IPQ806x**, **OpenWrt Ethernet link but no receive packets**, **GMAC2 TX-only**, or **GMAC3 PHY5 device tree patch**, the reproducible source change is [the tested DTS diff](patches/ap315-gmac3-phy5.patch). This fix has been confirmed on two physical AP-315 units, not on AP-314 or every hardware revision.
+
 ## The useful discovery
 
 The [historical AP-315 staging commit](https://git.openwrt.org/openwrt/staging/blocktrron/commit/?h=aruba-ap315&id=b3e1cf9bff8f927e80b8d51362e80e99d09cbd7b) described a physical `gmac2` → PHY5 SGMII path. On the tested units with a modern Linux/OpenWrt build, that configuration negotiated copper Ethernet at 100/full **but received zero Ethernet frames**. Linux TX counters increased; RX remained zero. APBoot TFTP worked, so the physical jack and PHY were not simply dead.
