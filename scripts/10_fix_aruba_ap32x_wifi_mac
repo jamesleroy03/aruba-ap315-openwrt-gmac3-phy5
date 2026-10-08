@@ -1,0 +1,23 @@
+#!/bin/sh
+
+[ "$ACTION" = "add" ] || exit 0
+
+PHYNBR=${DEVPATH##*/phy}
+[ -n "$PHYNBR" ] || exit 0
+
+. /lib/functions.sh
+. /lib/functions/system.sh
+
+case "$(board_name)" in
+aruba,ap-32x)
+	base=$(mtd_get_mac_binary 0:manu_info 29)
+	hex=${base//:/}
+	oui=${hex%??????}
+	tail=${hex#??????}
+	n2=${tail:1:1}
+	x=$(printf "%x" $((0x$n2 ^ 8)))
+	radio=${oui}${x}${tail:2:3}${tail:5:1}0
+	radio=$(echo "$radio" | sed 's/../&:/g;s/:$//')
+	[ "$PHYNBR" = "1" ] && echo "$radio" > /sys${DEVPATH}/macaddress
+	;;
+esac
