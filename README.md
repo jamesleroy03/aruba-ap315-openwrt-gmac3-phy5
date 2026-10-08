@@ -24,6 +24,9 @@ The breakthrough was enabling physical **GMAC3 (`37600000.ethernet`) with PHY5**
 
 ## Documentation
 
+- [Exact working GMAC3/PHY5 DTS patch](patches/ap315-gmac3-phy5.patch)
+- [Tested OpenWrt build configuration](build/openwrt.config)
+- [Wi-Fi MAC hotplug helper](scripts/10_fix_aruba_ap32x_wifi_mac)
 - [Ethernet debugging and DTS findings](docs/ETHERNET-GMAC3.md)
 - [Safe reproduction workflow and flash checkpoints](docs/FLASHING.md)
 - [Network and VLAN deployment](docs/NETWORK-VLAN.md)
@@ -31,7 +34,7 @@ The breakthrough was enabling physical **GMAC3 (`37600000.ethernet`) with PHY5**
 - [Firmware checksums and provenance](SHA256SUMS.md)
 - [Unresolved work and verification gaps](docs/OPEN-ITEMS.md)
 
-**Not included:** proprietary Aruba firmware/bootloader binaries, private network credentials, personal SSH keys, or an unverified machine-readable DTS patch. The exact working DTS diff and original bootloader-flash transcript still need extraction and review. Do not infer destructive SPI commands from prose.
+**Not included:** proprietary Aruba firmware/bootloader binaries, private network credentials, personal SSH keys, or unverified bootloader flashing commands. The exact working DTS diff has now been extracted and published; the original bootloader-flash transcript still needs independent verification. Do not infer destructive SPI commands from prose.
 
 ## Related upstream history
 
