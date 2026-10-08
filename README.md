@@ -18,6 +18,10 @@ The breakthrough was enabling physical **GMAC3 (`37600000.ethernet`) with PHY5**
 - Second unit also hosts a **SENA UD100 USB Bluetooth adapter exported over USB/IP** to a separate Home Assistant OS machine.
 - The QCA9984 5 GHz radio was **not** made operational; ath10k firmware/board-data initialization remains unresolved.
 
+## If Ethernet links up but RX stays at zero
+
+**Start here:** [AP-315 Ethernet RX-zero troubleshooting and misleading generic fixes](docs/ETHERNET-RX-ZERO-TROUBLESHOOTING.md). This covers the exact symptoms, distinguishes AP-315/IPQ806x from AP-303/IPQ40xx, and explains why RGMII delay and incorrect PHY-reset suggestions are not the tested solution.
+
 ## Documentation
 
 - [Ethernet debugging and DTS findings](docs/ETHERNET-GMAC3.md)
