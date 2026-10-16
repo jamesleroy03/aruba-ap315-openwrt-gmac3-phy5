@@ -1,7 +1,9 @@
 # Verification and contribution backlog
 
-- [ ] Extract the **exact** GMAC3/PHY5 DTS diff from the working OpenWrt source tree, compare against clean source commit, remove unrelated changes, and test applying it.
-- [ ] Publish the precise build configuration and package dependencies, after screening for secrets and private paths.
+- [x] Publish the extracted GMAC3/PHY5 DTS diff (`patches/ap315-gmac3-phy5.patch`; published October 8, 2026).
+- [ ] Independently verify that the published DTS patch applies cleanly to the documented clean source revision and contains no unrelated changes; publication alone does not establish this test.
+- [x] Publish the tested OpenWrt build configuration (`build/openwrt.config`; published October 8, 2026).
+- [ ] Independently verify completeness of package dependencies and review the published configuration for private paths or secrets.
 - [ ] Recover and independently verify the exact original APBoot SPI flash transcript. Until then, no copy-paste destructive bootloader instructions.
 - [ ] Confirm the second unit's permanent firmware hash from the actual backup/device.
 - [ ] Test HAOS reboot recovery for USB/IP and recheck after HAOS updates.
